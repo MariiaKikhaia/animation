@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+
+.content__rectangle {
+  height: 50px;
+  width: 100px;
+  background-color: blue;
+  border: 2px solid red;
+  position: relative;
+  left: 0;
+
+  animation-name: rectangle;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 4;
+  animation-direction: alternate;
+  animation-delay: 1.5s;
+}
+
+.content__circle{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: black;
+  border: 2px solid yellow;
+  position: relative;
+  left: 0;
+
+  animation-name: circle;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 4;
+  animation-direction: alternate;
+  animation-delay: 1.5s;
+}
+
+.content:hover .content__rectangle {
+  animation-play-state: paused;
+  background-color: magenta;
+}
+
+.content:hover .content__circle {
+  background-color: red;
+}
+
+.content__text {
+  padding: 7px;
+  text-align: center;
+  color: coral;
+}
+
+.content:hover .content__text {
+  color: black;
+}
+
+@keyframes rectangle {
+  from {
+    transform: scale(0.2);
+  }
+
+  50% {
+    transform: rotateX(20deg);
+    border-radius: 50px;
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(400px);
+    animation-timing-function: ease-out;
+  }
+
+}
+
+@keyframes circle {
+  from {
+    transform: scale(0.2);
+  }
+
+  50% {
+    transform: rotateX(20deg);
+    border-radius: 10px;
+  }
+
+  to {
+    transform: translateX(400px);
+    animation-timing-function: linear;
+  }
+
+}
